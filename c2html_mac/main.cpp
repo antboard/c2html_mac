@@ -33,7 +33,7 @@ void* TransforThreat(void* arg)
 			break;
 		}
 		pFile->parse();
-        pFile->save();
+        pFile->Save();
 	}
 	return 0;
 }

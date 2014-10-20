@@ -63,6 +63,8 @@ bool CCodeFile::parse()
 
 void CCodeFile::Save()
 {
+    // 构造目录路径
+    int x = strlen(CODE_PATH);
 	bool bRet = true;
 	string strHtmlFile(_T(OUTPUT_PATH));
 	strHtmlFile += m_fileName;
@@ -575,7 +577,7 @@ void CCodeFile::OutputHtml()
 			int x = (int)strPathFuncList.find(".js");
 			strPathFuncList.insert(x, ".huge");
 		}
-		int nFile = open(strPathFuncList.c_str(), O_WRONLY|O_CREAT);
+		int nFile = open(strPathFuncList.c_str(), O_WRONLY|O_CREAT|O_TRUNC, 0777);
 		if (nFile != -1)
 		{
 			write(nFile, strFuncList.c_str(), (unsigned int)strFuncList.size());
@@ -634,7 +636,7 @@ void CCodeFile::OutputHtml()
 			strPathCallList.insert(x, ".huge");
 		}
 
-		int nFile = open(strPathCallList.c_str(), O_WRONLY|O_CREAT);
+		int nFile = open(strPathCallList.c_str(), O_WRONLY|O_CREAT|O_TRUNC, 0777);
 		if (nFile != -1)
 		{
 			write(nFile, strSource.c_str(), (unsigned int)strSource.size());
@@ -695,7 +697,7 @@ void CCodeFile::OutputHtml()
 			strPathBeCallList.insert(x, ".huge");
 		}
 
-		int nFile = open(strPathBeCallList.c_str(), O_WRONLY|O_CREAT);
+		int nFile = open(strPathBeCallList.c_str(), O_WRONLY|O_CREAT|O_TRUNC, 0777);
 		if (nFile != -1)
 		{
 			write(nFile, strSource.c_str(), (unsigned int)strSource.size());

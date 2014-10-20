@@ -43,7 +43,7 @@ CHtmlFile::~CHtmlFile()
 
 		strtag += _T("<a href=\"#\" class=\"cm-string\" onClick=\"wantJmp()\">&#x5982;&#x679C;wifi&#x73AF;&#x5883;&#x8BF7;&#x70B9;&#x51FB;&#x6211;,&#x6253;&#x5F00;~~~</a>");
 		strtag += _T("</script><script src=\"/linux/src/hugefile.min.js\" type=\"text/javascript\" charset=\"utf-8\"></script>");
-		int nFile = open(tmpfile.c_str(), O_WRONLY|O_CREAT);
+		int nFile = open(tmpfile.c_str(), O_WRONLY|O_CREAT|O_TRUNC, 0777);
 		if (nFile != -1)
 		{
 			write(nFile, m_strSourceT.c_str(), (unsigned int)m_strSourceT.size());
@@ -62,7 +62,7 @@ CHtmlFile::~CHtmlFile()
 		// }
 
 	}
-	int nFile = open(m_strSaveFile.c_str(),  O_WRONLY|O_CREAT);
+	int nFile = open(m_strSaveFile.c_str(),  O_WRONLY|O_CREAT|O_TRUNC, 0777);
 	if (nFile != -1)
 	{
 		write(nFile, m_strSourceT.c_str(), (unsigned int)m_strSourceT.size());
