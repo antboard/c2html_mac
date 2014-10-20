@@ -8,6 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		7DF18BC319F52AE500B266DD /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF18BC219F52AE500B266DD /* main.cpp */; };
+		7DF18BE119F52BC700B266DD /* codeFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF18BCA19F52BC700B266DD /* codeFile.cpp */; };
+		7DF18BE219F52BC700B266DD /* docFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF18BCC19F52BC700B266DD /* docFile.cpp */; };
+		7DF18BE319F52BC700B266DD /* FuncRef.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF18BCE19F52BC700B266DD /* FuncRef.cpp */; };
+		7DF18BE419F52BC700B266DD /* funcrefs.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF18BD019F52BC700B266DD /* funcrefs.cpp */; };
+		7DF18BE519F52BC700B266DD /* htmlfile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF18BD319F52BC700B266DD /* htmlfile.cpp */; };
+		7DF18BE619F52BC700B266DD /* Keyword.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF18BD519F52BC700B266DD /* Keyword.cpp */; };
+		7DF18BE719F52BC700B266DD /* Line.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF18BD719F52BC700B266DD /* Line.cpp */; };
+		7DF18BE819F52BC700B266DD /* nodeManage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF18BD919F52BC700B266DD /* nodeManage.cpp */; };
+		7DF18BE919F52BC700B266DD /* nodeManageDir.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF18BDB19F52BC700B266DD /* nodeManageDir.cpp */; };
+		7DF18BEA19F52BC700B266DD /* nodeManageFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF18BDD19F52BC700B266DD /* nodeManageFile.cpp */; };
+		7DF18BEB19F52BC700B266DD /* word.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF18BDF19F52BC700B266DD /* word.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +36,29 @@
 /* Begin PBXFileReference section */
 		7DF18BBF19F52AE500B266DD /* c2html_mac */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = c2html_mac; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DF18BC219F52AE500B266DD /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		7DF18BC919F52BC700B266DD /* basedata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = basedata.h; sourceTree = "<group>"; };
+		7DF18BCA19F52BC700B266DD /* codeFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = codeFile.cpp; sourceTree = "<group>"; };
+		7DF18BCB19F52BC700B266DD /* codeFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = codeFile.h; sourceTree = "<group>"; };
+		7DF18BCC19F52BC700B266DD /* docFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = docFile.cpp; sourceTree = "<group>"; };
+		7DF18BCD19F52BC700B266DD /* docFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = docFile.h; sourceTree = "<group>"; };
+		7DF18BCE19F52BC700B266DD /* FuncRef.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FuncRef.cpp; sourceTree = "<group>"; };
+		7DF18BCF19F52BC700B266DD /* FuncRef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FuncRef.h; sourceTree = "<group>"; };
+		7DF18BD019F52BC700B266DD /* funcrefs.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = funcrefs.cpp; sourceTree = "<group>"; };
+		7DF18BD119F52BC700B266DD /* FuncRefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FuncRefs.h; sourceTree = "<group>"; };
+		7DF18BD319F52BC700B266DD /* htmlfile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = htmlfile.cpp; sourceTree = "<group>"; };
+		7DF18BD419F52BC700B266DD /* htmlfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = htmlfile.h; sourceTree = "<group>"; };
+		7DF18BD519F52BC700B266DD /* Keyword.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Keyword.cpp; sourceTree = "<group>"; };
+		7DF18BD619F52BC700B266DD /* Keyword.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Keyword.h; sourceTree = "<group>"; };
+		7DF18BD719F52BC700B266DD /* Line.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Line.cpp; sourceTree = "<group>"; };
+		7DF18BD819F52BC700B266DD /* Line.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Line.h; sourceTree = "<group>"; };
+		7DF18BD919F52BC700B266DD /* nodeManage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = nodeManage.cpp; sourceTree = "<group>"; };
+		7DF18BDA19F52BC700B266DD /* nodeManage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = nodeManage.h; sourceTree = "<group>"; };
+		7DF18BDB19F52BC700B266DD /* nodeManageDir.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = nodeManageDir.cpp; sourceTree = "<group>"; };
+		7DF18BDC19F52BC700B266DD /* nodeManageDir.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = nodeManageDir.h; sourceTree = "<group>"; };
+		7DF18BDD19F52BC700B266DD /* nodeManageFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = nodeManageFile.cpp; sourceTree = "<group>"; };
+		7DF18BDE19F52BC700B266DD /* nodeManageFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = nodeManageFile.h; sourceTree = "<group>"; };
+		7DF18BDF19F52BC700B266DD /* word.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = word.cpp; sourceTree = "<group>"; };
+		7DF18BE019F52BC700B266DD /* Word.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Word.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +91,29 @@
 		7DF18BC119F52AE500B266DD /* c2html_mac */ = {
 			isa = PBXGroup;
 			children = (
+				7DF18BC919F52BC700B266DD /* basedata.h */,
+				7DF18BCA19F52BC700B266DD /* codeFile.cpp */,
+				7DF18BCB19F52BC700B266DD /* codeFile.h */,
+				7DF18BCC19F52BC700B266DD /* docFile.cpp */,
+				7DF18BCD19F52BC700B266DD /* docFile.h */,
+				7DF18BCE19F52BC700B266DD /* FuncRef.cpp */,
+				7DF18BCF19F52BC700B266DD /* FuncRef.h */,
+				7DF18BD019F52BC700B266DD /* funcrefs.cpp */,
+				7DF18BD119F52BC700B266DD /* FuncRefs.h */,
+				7DF18BD319F52BC700B266DD /* htmlfile.cpp */,
+				7DF18BD419F52BC700B266DD /* htmlfile.h */,
+				7DF18BD519F52BC700B266DD /* Keyword.cpp */,
+				7DF18BD619F52BC700B266DD /* Keyword.h */,
+				7DF18BD719F52BC700B266DD /* Line.cpp */,
+				7DF18BD819F52BC700B266DD /* Line.h */,
+				7DF18BD919F52BC700B266DD /* nodeManage.cpp */,
+				7DF18BDA19F52BC700B266DD /* nodeManage.h */,
+				7DF18BDB19F52BC700B266DD /* nodeManageDir.cpp */,
+				7DF18BDC19F52BC700B266DD /* nodeManageDir.h */,
+				7DF18BDD19F52BC700B266DD /* nodeManageFile.cpp */,
+				7DF18BDE19F52BC700B266DD /* nodeManageFile.h */,
+				7DF18BDF19F52BC700B266DD /* word.cpp */,
+				7DF18BE019F52BC700B266DD /* Word.h */,
 				7DF18BC219F52AE500B266DD /* main.cpp */,
 			);
 			path = c2html_mac;
@@ -118,6 +175,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DF18BE819F52BC700B266DD /* nodeManage.cpp in Sources */,
+				7DF18BE219F52BC700B266DD /* docFile.cpp in Sources */,
+				7DF18BEA19F52BC700B266DD /* nodeManageFile.cpp in Sources */,
+				7DF18BE919F52BC700B266DD /* nodeManageDir.cpp in Sources */,
+				7DF18BE719F52BC700B266DD /* Line.cpp in Sources */,
+				7DF18BEB19F52BC700B266DD /* word.cpp in Sources */,
+				7DF18BE319F52BC700B266DD /* FuncRef.cpp in Sources */,
+				7DF18BE519F52BC700B266DD /* htmlfile.cpp in Sources */,
+				7DF18BE619F52BC700B266DD /* Keyword.cpp in Sources */,
+				7DF18BE119F52BC700B266DD /* codeFile.cpp in Sources */,
+				7DF18BE419F52BC700B266DD /* funcrefs.cpp in Sources */,
 				7DF18BC319F52AE500B266DD /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -202,6 +270,9 @@
 		7DF18BC719F52AE500B266DD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -209,6 +280,8 @@
 		7DF18BC819F52AE500B266DD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
