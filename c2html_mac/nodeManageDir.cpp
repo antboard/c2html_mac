@@ -79,7 +79,7 @@ void CNodeManageDir::OutputHtml()
 	string strPath(OUTPUT_PATH);
 	int x = strlen(CODE_PATH);
     if (m_strPath.length() == x) {
-        strPath += "linux";
+        strPath += "linux-web";
     }
 	strPath += m_strPath.substr(x, m_strPath.length()-x-1);// 默认路径中减去磁盘源文件路径
 	strPath += ".html";

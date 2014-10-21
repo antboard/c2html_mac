@@ -1,5 +1,5 @@
 #include "MenuOutputFile.h"
-
+#include "basedata.h"
 
 #include <unistd.h>
 #include <sys/stat.h>
@@ -26,15 +26,16 @@ CMenuOutputFile::CMenuOutputFile(string& strSave)
 	m_strSource += _T("<body>");
 
 	m_strSource += _T("<div class=\"CodeMirror cm-s-3024-night\" id=\"core-code\">");
+    int static_len = strlen(OUTPUT_PATH);
     // 计算父目录;
 	int x = (int)m_strSaveFile.rfind("/");
-	if ((x == -1) || x <=25)
+	if ((x == -1) || x <= static_len)
 	{
-		m_strSource += "<a href=\"/linux/src/linux-3.15.7.html\"><span class=\"ant-dir\">linux src</span></a><br/>";
+		m_strSource += "<a href=\"/linux/src/linux-web.html\"><span class=\"ant-dir\">linux src</span></a><br/>";
 		return;
 	}
-	x -= 25;
-	string strPrt = m_strSaveFile.substr(25,x);
+	x -= static_len;
+	string strPrt = m_strSaveFile.substr(static_len,x);
 	m_strSource += "<a href=\"";
 	m_strSource += "/linux/src/";
 	m_strSource += strPrt.c_str();
@@ -47,7 +48,7 @@ CMenuOutputFile::CMenuOutputFile(string& strSave)
 	m_strSource += "</a><br/>";
 	m_strSource += "<a>";
 	m_strSource += "<span class=\"ant-dir\">&#x5F53;&#x524D;&#x76EE;&#x5F55;:";
-	m_strSource += m_strSaveFile.substr(25,(int)m_strSaveFile.rfind(".html")-25);
+	m_strSource += m_strSaveFile.substr(static_len,(int)m_strSaveFile.rfind(".html")-static_len);
 	m_strSource += "/</span></a><br/>";
 }
 
