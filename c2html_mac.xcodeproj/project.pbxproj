@@ -19,6 +19,7 @@
 		7DF18BE919F52BC700B266DD /* nodeManageDir.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF18BDB19F52BC700B266DD /* nodeManageDir.cpp */; };
 		7DF18BEA19F52BC700B266DD /* nodeManageFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF18BDD19F52BC700B266DD /* nodeManageFile.cpp */; };
 		7DF18BEB19F52BC700B266DD /* word.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF18BDF19F52BC700B266DD /* word.cpp */; };
+		7DF18BF019F60A0300B266DD /* MenuOutputFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF18BEF19F60A0300B266DD /* MenuOutputFile.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -59,6 +60,8 @@
 		7DF18BDE19F52BC700B266DD /* nodeManageFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = nodeManageFile.h; sourceTree = "<group>"; };
 		7DF18BDF19F52BC700B266DD /* word.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = word.cpp; sourceTree = "<group>"; };
 		7DF18BE019F52BC700B266DD /* Word.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Word.h; sourceTree = "<group>"; };
+		7DF18BED19F6065E00B266DD /* MenuOutputFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuOutputFile.h; sourceTree = "<group>"; };
+		7DF18BEF19F60A0300B266DD /* MenuOutputFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MenuOutputFile.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +94,8 @@
 		7DF18BC119F52AE500B266DD /* c2html_mac */ = {
 			isa = PBXGroup;
 			children = (
+				7DF18BEF19F60A0300B266DD /* MenuOutputFile.cpp */,
+				7DF18BED19F6065E00B266DD /* MenuOutputFile.h */,
 				7DF18BC919F52BC700B266DD /* basedata.h */,
 				7DF18BCA19F52BC700B266DD /* codeFile.cpp */,
 				7DF18BCB19F52BC700B266DD /* codeFile.h */,
@@ -181,6 +186,7 @@
 				7DF18BE919F52BC700B266DD /* nodeManageDir.cpp in Sources */,
 				7DF18BE719F52BC700B266DD /* Line.cpp in Sources */,
 				7DF18BEB19F52BC700B266DD /* word.cpp in Sources */,
+				7DF18BF019F60A0300B266DD /* MenuOutputFile.cpp in Sources */,
 				7DF18BE319F52BC700B266DD /* FuncRef.cpp in Sources */,
 				7DF18BE519F52BC700B266DD /* htmlfile.cpp in Sources */,
 				7DF18BE619F52BC700B266DD /* Keyword.cpp in Sources */,
@@ -305,6 +311,7 @@
 				7DF18BC819F52AE500B266DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
