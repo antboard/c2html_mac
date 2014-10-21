@@ -233,7 +233,7 @@ bool CLine::Save(CHtmlFile* html)
 	string strValue;
 	EWORDTAG tag = EWORD_INIT;
 	int nId = 0;
-	int nFuncCount = 0;// 函数索引在此处和输出xml的时候都会用到.暂时先不修改.在输出xml时也做一个索引.如果出现bug则统一计数
+//	int nFuncCount = 0;// 函数索引在此处和输出xml的时候都会用到.暂时先不修改.在输出xml时也做一个索引.如果出现bug则统一计数
 	CWord* pCurWord = m_pStart;
 
 	if (m_vWords.empty())// 如果没有实质性内容。不用输出空格
@@ -362,7 +362,7 @@ void CLine::EndNewLine(CHtmlFile* html)
 
 string CLine::GetClassName(EWORDTAG tag, int id)
 {
-	static char keyword[3][10]={{_T("")},{_T("skeyword1")},{_T("skeyword2")}};
+//	static char keyword[3][10]={{_T("")},{_T("skeyword1")},{_T("skeyword2")}};
 	string strTag = _T("");
 	char num[64] = {0};
 	sprintf(num, "%d", id);

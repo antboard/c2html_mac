@@ -72,3 +72,29 @@ void CNodeManageDir::CreateNewPath()
 	}
 	m_node.CreateNewPath();
 }
+
+void CNodeManageDir::OutputHtml()
+{
+	// 构造输出目录
+	string strPath(OUTPUT_PATH);
+	int x = strlen(CODE_PATH);
+    if (m_strPath.length() == x) {
+        strPath += "linux";
+    }
+	strPath += m_strPath.substr(x, m_strPath.length()-x-1);// 默认路径中减去磁盘源文件路径
+	strPath += ".html";
+
+	string strRelativePath = (m_strPath.c_str()+x);
+	// 创建html文件
+	m_node.OutputHtml(strPath, strRelativePath);
+}
+
+string CNodeManageDir::GetName()
+{
+    int l = (int)m_strPath.length();
+    int n = (int)m_strPath.rfind("/", l-2);
+    string str = m_strPath.substr(n+1, l-n-2);
+    return str;
+}
+
+

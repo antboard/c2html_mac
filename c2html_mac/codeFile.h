@@ -15,6 +15,7 @@ class CCodeFile : public CNodeManageFile
 public:
 	CCodeFile(const char* pPath, const char* name);
 	~CCodeFile();
+	void clearLine();
 	
 	virtual bool parse();
 	virtual void OutputHtml();

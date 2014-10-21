@@ -30,7 +30,26 @@ CCodeFile::~CCodeFile()
 		it++;
 	}
 
-	vector<CLine*>::iterator itLine = m_vLines.begin();
+	clearLine();
+	
+	pthread_mutex_lock(&m_map_mutex);
+	map<string, CFuncRefs*>::iterator iMap = m_mapFuncs.begin();
+	while (iMap != m_mapFuncs.end())
+	{
+		CFuncRefs* ref = iMap->second;
+		if (ref)
+		{
+			delete ref;
+		}
+		iMap++;
+	}
+	m_mapFuncs.clear();
+	pthread_mutex_unlock(&m_map_mutex);
+}
+
+void CCodeFile::clearLine()
+{
+		vector<CLine*>::iterator itLine = m_vLines.begin();
 	while (itLine != m_vLines.end())
 	{
 		CLine* pLine = *itLine;
@@ -40,9 +59,8 @@ CCodeFile::~CCodeFile()
 		}
 		itLine++;
 	}
-
-	pthread_mutex_lock(&m_map_mutex);
 }
+
 
 bool CCodeFile::parse()
 {
@@ -67,6 +85,7 @@ void CCodeFile::Save()
     int x = strlen(CODE_PATH);
 	bool bRet = true;
 	string strHtmlFile(_T(OUTPUT_PATH));
+    strHtmlFile += (m_strPath.c_str()+x);// 默认路径中减去磁盘源文件路径
 	strHtmlFile += m_fileName;
 	strHtmlFile += ".html";
 
@@ -92,6 +111,7 @@ void CCodeFile::Save()
 	}
 
 	delete pHtmlFile;
+	clearLine();
 	return ;
 }
 

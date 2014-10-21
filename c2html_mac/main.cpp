@@ -51,6 +51,7 @@ int main(int argc,char* argv[])
 	// 创建新路径
 	dir.CreateNewPath();
 	// 输出html路径
+    dir.OutputHtml();
 	if (pthread_mutex_init(&vec_mutex, NULL))
 	{
 		fprintf(stderr,"ERROR: init mutex error\n");

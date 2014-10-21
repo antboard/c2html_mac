@@ -12,6 +12,9 @@ public:
 	CNodeManageDir(const char* path, int tabs = 0);
 	~CNodeManageDir();
 	void CreateNewPath();
+    void OutputHtml();
+    string GetName();
+    string& GetPath(){return m_strPath;}
 private:
 	string m_strPath;	// 路径
 	CNodeManage m_node;	// 目录中的内容是node集	

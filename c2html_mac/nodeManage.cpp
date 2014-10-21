@@ -1,6 +1,7 @@
 #include "nodeManage.h"
 #include "nodeManageDir.h"
 #include "nodeManageFile.h"
+#include "MenuOutputFile.h"
 #include "string.h"
 
 #include "codeFile.h"
@@ -125,6 +126,53 @@ void CNodeManage::CreateNewPath()
 			pDir->CreateNewPath();
 		}	
 		it++;
+	}
+}
+
+void CNodeManage::OutputHtml(string strFile, string& rPath)
+{
+    char cls[] = "/";
+    char cls1[] = "";
+	CMenuOutputFile* pHtmlFile = new CMenuOutputFile(strFile);// CHtmlFile
+	//int x = strlen(CODE_PATH);
+	std::vector<CNodeManageDir*>::iterator itDir = m_vpDirs.begin();
+	while(itDir != m_vpDirs.end())
+	{
+		CNodeManageDir* pDir = *itDir;
+		if (pDir)
+		{
+			string strUri = rPath;
+			strUri += pDir->GetName();
+			strUri += ".html";
+			pHtmlFile->AddMenu(pDir->GetName(), strUri, cls);
+		}
+		itDir++;
+	}
+
+	std::vector<CNodeManageFile*>::iterator itFile = m_vpFiles.begin();
+	while(itFile != m_vpFiles.end())
+	{
+		CNodeManageFile* pFile = *itFile;
+		if (pFile)
+		{
+			string strUri = rPath;
+			strUri += pFile->GetName();
+			strUri += ".html";
+			pHtmlFile->AddMenu(pFile->GetName(), strUri, cls1);
+		}
+		itFile++;
+	}
+	delete pHtmlFile;
+    
+    itDir = m_vpDirs.begin();
+	while(itDir != m_vpDirs.end())
+	{
+		CNodeManageDir* pDir = *itDir;
+		if (pDir)
+		{
+			pDir->OutputHtml();
+		}
+		itDir++;
 	}
 }
 

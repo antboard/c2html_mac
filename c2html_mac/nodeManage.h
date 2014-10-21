@@ -12,6 +12,7 @@
 
 class CNodeManageDir;
 class CNodeManageFile;
+class CMenuOutputFile;
 class CNodeManage
  {
  public:
@@ -22,6 +23,7 @@ class CNodeManage
  	bool AddFile(const char* pPath, char* name, int tabs);
 
 	void CreateNewPath();
+	void OutputHtml(string strFile, string& rPath);
 
  	static int GetCHFileNum(){return m_nSumCHFile;}
  	static int GetDocFileNum(){return m_nDocFile;}
