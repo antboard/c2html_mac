@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7DBF3F501A05E38B00002E98 /* basedata.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DBF3F4F1A05E38B00002E98 /* basedata.cpp */; };
 		7DF18BC319F52AE500B266DD /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF18BC219F52AE500B266DD /* main.cpp */; };
 		7DF18BE119F52BC700B266DD /* codeFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF18BCA19F52BC700B266DD /* codeFile.cpp */; };
 		7DF18BE219F52BC700B266DD /* docFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF18BCC19F52BC700B266DD /* docFile.cpp */; };
@@ -40,6 +41,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7DBF3F4F1A05E38B00002E98 /* basedata.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = basedata.cpp; sourceTree = "<group>"; };
 		7DF18BBF19F52AE500B266DD /* c2html_mac */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = c2html_mac; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DF18BC219F52AE500B266DD /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		7DF18BC919F52BC700B266DD /* basedata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = basedata.h; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 		7DF18BC119F52AE500B266DD /* c2html_mac */ = {
 			isa = PBXGroup;
 			children = (
+				7DBF3F4F1A05E38B00002E98 /* basedata.cpp */,
 				7DF18BFD19F9188B00B266DD /* scriptFile.cpp */,
 				7DF18BFE19F9188B00B266DD /* scriptFile.h */,
 				7DF18BFF19F9188B00B266DD /* ScriptLine.cpp */,
@@ -221,6 +224,7 @@
 				7DF18BE519F52BC700B266DD /* htmlfile.cpp in Sources */,
 				7DF18BE619F52BC700B266DD /* Keyword.cpp in Sources */,
 				7DF18BE119F52BC700B266DD /* codeFile.cpp in Sources */,
+				7DBF3F501A05E38B00002E98 /* basedata.cpp in Sources */,
 				7DF18BE419F52BC700B266DD /* funcrefs.cpp in Sources */,
 				7DF18BC319F52AE500B266DD /* main.cpp in Sources */,
 			);

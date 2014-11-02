@@ -11,9 +11,9 @@ using namespace std;
 #define _T
 
 #define CODE_PATH "/Users/jiangyichun/Downloads/code/linux-stable/"
-#define OUTPUT_PATH "/Users/jiangyichun/Downloads/code/linux-web/"
+#define OUTPUT_PATH "/Users/jiangyichun/Downloads/code/linux-weboutput/"
 #define JS_PATH "/linux/src/"
-#define WEB_PATH "/linux/src/linux-web/"
+#define INDEX_NAME "linux-3.14.22"
 // 枚举到的目录提示
 // #define ENABLE_PATH_TIPS 
 
@@ -27,7 +27,7 @@ using namespace std;
 #define MACROFUNCTAG 39
 
 void n2str(int n, string& str);
-
+void GetDir(char* path, string& dir);
 
 enum EWORDTAG
 {

@@ -55,6 +55,8 @@ void CNodeManageDir::CreateNewPath()
 {
 	// 构造目录路径
 	string strOutput = OUTPUT_PATH;
+    strOutput += INDEX_NAME;
+    strOutput += "/";
 	int x = strlen(CODE_PATH);
 	strOutput += (m_strPath.c_str()+x);
 
@@ -79,10 +81,15 @@ void CNodeManageDir::OutputHtml()
 	string strPath(OUTPUT_PATH);
 	int x = strlen(CODE_PATH);
     if (m_strPath.length() == x) {
-        strPath += "linux-web";
+        strPath += INDEX_NAME;
     }
-	strPath += m_strPath.substr(x, m_strPath.length()-x-1);// 默认路径中减去磁盘源文件路径
-	strPath += ".html";
+    else
+    {
+        strPath += INDEX_NAME;
+        strPath += "/";
+        strPath += m_strPath.substr(x, m_strPath.length()-x-1);// 默认路径中减去磁盘源文件路径
+    }
+    strPath += ".html";
 
 	string strRelativePath = (m_strPath.c_str()+x);
 	// 创建html文件

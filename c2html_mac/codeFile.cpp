@@ -85,6 +85,8 @@ void CCodeFile::Save()
     int x = strlen(CODE_PATH);
 	bool bRet = true;
 	string strHtmlFile(_T(OUTPUT_PATH));
+    strHtmlFile += INDEX_NAME;
+    strHtmlFile += "/";
     strHtmlFile += (m_strPath.c_str()+x);// 默认路径中减去磁盘源文件路径
 	strHtmlFile += m_fileName;
 	strHtmlFile += ".html";
@@ -552,6 +554,8 @@ void CCodeFile::OutputHtml()
 	bool b_del = false;
 	string tmp;
 	string strPath(OUTPUT_PATH);
+    strPath += INDEX_NAME;
+    strPath += "/";
 	strPath += m_strPath.substr(strlen(CODE_PATH));
 	strPath += GetName();
 	string strPathFuncList = strPath + "_fn.js";

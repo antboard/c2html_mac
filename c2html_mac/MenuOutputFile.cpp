@@ -35,13 +35,14 @@ CMenuOutputFile::CMenuOutputFile(string& strSave)
 	{
         m_strSource += "<a href=\"";
         m_strSource += JS_PATH;
-        m_strSource += "linux-web.html\"><span class=\"ant-dir\">linux src</span></a><br/>";
+        m_strSource += INDEX_NAME;
+        m_strSource += ".html\"><span class=\"ant-dir\">linux src</span></a><br/>";
 		return;
 	}
 	x -= static_len;
 	string strPrt = m_strSaveFile.substr(static_len,x);
 	m_strSource += "<a href=\"";
-    m_strSource += WEB_PATH;
+    m_strSource += JS_PATH;
 	m_strSource += strPrt.c_str();
 	m_strSource += ".html";
 	m_strSource += "\">";
@@ -92,7 +93,9 @@ void CMenuOutputFile::AddMenu(const string& strtag, string& strLink, char* cls)
 		return;
 	}
 	m_strSource += "<a href=\"";
-	m_strSource += WEB_PATH;
+	m_strSource += JS_PATH;
+    m_strSource += INDEX_NAME;
+    m_strSource += "/";
 	m_strSource += strLink.c_str();
 	m_strSource += "\">";
 	m_strSource += "<span class=\"ant-dir\">";

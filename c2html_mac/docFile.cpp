@@ -58,6 +58,8 @@ void CDocFile::Save()
     // 构造目录路径
     int x = strlen(CODE_PATH);
 	string strHtmlFile(_T(OUTPUT_PATH));
+    strHtmlFile += INDEX_NAME;
+    strHtmlFile += "/";
     strHtmlFile += (m_strPath.c_str()+x);// 默认路径中减去磁盘源文件路径
     strHtmlFile += m_fileName;
 	strHtmlFile += _T(".html");
