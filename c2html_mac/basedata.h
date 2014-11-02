@@ -12,6 +12,8 @@ using namespace std;
 
 #define CODE_PATH "/Users/jiangyichun/Downloads/code/linux-stable/"
 #define OUTPUT_PATH "/Users/jiangyichun/Downloads/code/linux-web/"
+#define JS_PATH "/linux/src/"
+#define WEB_PATH "/linux/src/linux-web/"
 // 枚举到的目录提示
 // #define ENABLE_PATH_TIPS 
 
@@ -24,7 +26,8 @@ using namespace std;
 #define TAGNEWKEYWORD 38
 #define MACROFUNCTAG 39
 
-extern void n2str(int n, string& str);
+void n2str(int n, string& str);
+
 
 enum EWORDTAG
 {
@@ -65,5 +68,6 @@ enum EBYTETAG
 	EBYTE_NUM,		// 数字
 };
 
+EBYTETAG getWordType(unsigned char n);
 
 #endif

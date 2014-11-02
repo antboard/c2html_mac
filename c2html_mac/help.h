@@ -23,3 +23,6 @@ if (nFile == -1)
 	fprintf(stderr,"ERROR: open file %s error\n", fileName.c_str());
 	return false;
 }
+
+// 计算路径长度
+int x = strlen(CODE_PATH);

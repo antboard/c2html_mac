@@ -27,6 +27,8 @@ class CNodeManage
 
  	static int GetCHFileNum(){return m_nSumCHFile;}
  	static int GetDocFileNum(){return m_nDocFile;}
+ 	static int GetAsmFileNum(){return m_nAsmFile;}
+ 	static int GetScriptFileNum(){return m_nScriptFile;}
  	static CNodeManageFile* GetFile();
 private:
  	bool AddFileFilter(const char* name);
@@ -39,6 +41,8 @@ private:
  	static std::vector<CNodeManageFile*> m_vCoverFiles;
  	static int m_nSumCHFile;
  	static int m_nDocFile;
+ 	static int m_nAsmFile;
+ 	static int m_nScriptFile;
  }; 
 
  #endif

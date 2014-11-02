@@ -12,6 +12,7 @@ public:
 	
 	virtual bool parse() = 0;
     virtual void Save() = 0;
+    virtual void OutputHtml() = 0;
     string& GetPath(){return m_strPath;}
 	const string& GetName(){return m_fileName;}
 protected:

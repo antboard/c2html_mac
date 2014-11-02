@@ -1,81 +1,16 @@
-﻿//#include "stdafx.h"
-
-#include "Line.h"
-#include "Word.h"
-#include "Keyword.h"
+#include "ScriptLine.h"
 #include "htmlfile.h"
+#include "basedata.h"
+#include "Word.h"
 
-#ifdef _DEBUG
-#define new DEBUG_NEW
-#endif
-
-CKeyword keyword_g;
-bool TestBk(string& x)
+bool TestBk(string& x);
+bool TestKw(string& x)
 {
-	/*
-	++,--,==,+=,-=,*=,/=,->//&& 不能出现+,-,*,/&
-	*/
-	// 构造一个列表来查询,如果一个连续不再此内则不能连续
-	string bk="`@ * + - / = ( ) [ ] { } ++ -- == += -= *= /= &= |= && || -> /* */ //, . ' \" >> << != # ; ";
+
+	string bk="config def_bool select source menu bool help endmenu depends on int default define echo endef";
 	return bk.find(x) != string::npos;
 }
-
-EBYTETAG getWordType(unsigned char n)
-{
-    if (n == ' ')
-    {
-        return EBYTE_SPACE;	// 空格
-    }
-    else if (n == 0x09)
-    {
-        return EBYTE_TAB;	// TAB
-    }
-    else if ((n >= '0') && (n <= '9'))
-    {
-        return EBYTE_NUM;	// 数字
-    }
-    else if ((n >= 'A') && (n <= 'Z'))
-    {
-        return EBYTE_LETTER;	// 大写字母
-    }
-    else if ((n >= 'a') && (n <= 'z'))
-    {
-        return EBYTE_LETTER;	// 小写字母
-    }
-    else if (n == '_')	//优先于符号判断
-        return EBYTE_LETTER;
-    else if ((n > 0x20) && (n < 0x30))
-    {
-        return EBYTE_SYMBOL;	// 符号
-    }
-    else if ((n > 0x39) && (n < 0x41))
-    {
-        return EBYTE_SYMBOL;	// 符号
-    }
-    else if ((n > 0x5a) && (n < 0x61))
-    {
-        return EBYTE_SYMBOL;	// 符号
-    }
-    else if ((n > 0x7a) && (n < 0x7f))
-    {
-        return EBYTE_SYMBOL;	// 符号
-    }
-    else if (n == 10)
-    {
-        return EBYTE_NONE;		// 回车换行
-    }
-    else
-    {
-        if (n != 0)
-        {
-            //assert(FALSE);
-        }
-        
-        return EBYTE_NONE;
-    }
-}
-
-CLine::CLine(char* pLineStart, int nLine)
+CScriptLine::CScriptLine(char* pLineStart, int nLine)
 	: m_pStart(NULL)
 {
 	// 设置行号
@@ -163,12 +98,10 @@ CLine::CLine(char* pLineStart, int nLine)
 		CWord* pWord = new CWord(strWord);
 		pWord->SetAttrib(ewtag);
 		// 判断关键字插入
-		CKeyword* pKey = &keyword_g;
-		int nId = pKey->IsKeyWord(strWord);
-		if ((ewtag == EWORD_INIT) && nId)
+
+		if (TestKw(strWord))
 		{
 			pWord->SetAttrib(EWORD_KEYWORD);
-			pWord->SetKeyWordId(nId);
 		}
 
 
@@ -184,51 +117,39 @@ CLine::CLine(char* pLineStart, int nLine)
 		pCurWord = pWord;
 		if (!m_pStart)	m_pStart = pCurWord;
 	}
-
 }
 
 
-CLine::~CLine(void)
+CScriptLine::~CScriptLine(void)
 {
-	// 释放下一级数据
-	vector<CWord*>::iterator it = m_vWords.begin();
-	while(it != m_vWords.end())
-	{
-		CWord* p = *it;
-		if (p)
-		{
-			delete p;
-		}
-		it++;
-	}
-	// 释放下一级数据
-	it = m_vPadWords.begin();
-	while(it != m_vPadWords.end())
-	{
-		if (*it)
-		{
-			delete *it;
-		}
-		it++;
-	}
 }
 
-CWord* CLine::GetWord(unsigned int n)
+void CScriptLine::StartNewLine(CHtmlFile* html, int zIdx)
 {
-	assert(n >= 0);
+	char buffer[65];
+	string str;
+	string strLine = _T("L");
+    sprintf(buffer, "%d", m_nLine);
+	string strShow(buffer);
+	strLine += buffer;
 
-	if (n < m_vWords.size()) 
-	{
-		return m_vWords[n]; 
-	}
-	else
-	{
-		n = (int)m_vWords.size()-1;
-		return NULL;
-	}
+	char cZIdx[65];
+    sprintf(cZIdx, "%d", zIdx);
+	string strZIdx(cZIdx);
+	str = _T("<pre><a name=\"L");
+	str += strShow;
+	str +=_T("\"><span class=\"CodeMirror-linenumber\">");
+	str += strShow;
+	str += _T("&nbsp;&nbsp;</span></a>");
+	html->Output(str);
+}
+void CScriptLine::EndNewLine(CHtmlFile* html)
+{
+	string str = _T("</pre>");
+	html->Output(str);
 }
 
-bool CLine::Save(CHtmlFile* html)
+bool CScriptLine::Save(CHtmlFile* html)
 {
 	string strValue;
 	EWORDTAG tag = EWORD_INIT;
@@ -312,60 +233,27 @@ bool CLine::Save(CHtmlFile* html)
 	return true;
 }
 
-
-void CLine::StartNewLine(CHtmlFile* html, int zIdx)
+CWord* CScriptLine::GetWord(unsigned int n)
 {
-	char buffer[65];
-	string str;
-	string strLine = _T("L");
-	sprintf(buffer, "%d", m_nLine);
-	string strShow(buffer);
-	strLine += buffer;
+	assert(n >= 0);
 
-	char cZIdx[65];
-	sprintf(cZIdx, "%d", zIdx);
-	string strZIdx(cZIdx);
-	str = _T("<pre><a name=\"L");
-	str += strShow;
-	str +=_T("\"><span class=\"CodeMirror-linenumber\">");
-	str += strShow;
-	str += _T("&nbsp;&nbsp;</span></a>");
-	html->Output(str);
-}
-void CLine::EndNewLine(CHtmlFile* html)
-{
-	char buffer[65];
-	// string strLine = _T("L");
-	// _itoa_s(m_nLine+1, buffer, 65, 10);
-	string strShow(buffer);
-	// strLine += buffer;
-
-	string str(_T("<br/></div>"));
-	
-/*	string str(_T("</div>"));
-	if (m_pFunc && (m_num == m_pFunc->GetEndLine()))
+	if (n < m_vWords.size()) 
 	{
-		str += _T("</div>");
+		return m_vWords[n]; 
 	}
-	// 添加回车标志<br/>
-	while (m_nByteCount > 0)
+	else
 	{
-		str += "<br/>";
-		m_nByteCount -= MAXLINECOUNT;
+		n = (int)m_vWords.size()-1;
+		return NULL;
 	}
-	*/
-	str = _T("</pre>");
-	html->Output(str);
-	
 }
 
-
-string CLine::GetClassName(EWORDTAG tag, int id)
+string CScriptLine::GetClassName(EWORDTAG tag, int id)
 {
 //	static char keyword[3][10]={{_T("")},{_T("skeyword1")},{_T("skeyword2")}};
 	string strTag = _T("");
 	char num[64] = {0};
-	sprintf(num, "%d", id);
+    sprintf(num, "%d", id);
 	switch (tag)
 	{
 	case EWORD_KEYWORD: 
@@ -408,7 +296,7 @@ string CLine::GetClassName(EWORDTAG tag, int id)
 		strTag = _T("cm-number");
 		return strTag;
 	case EWORD_INIT:
-		strTag = _T("cm-variable");
+		strTag = _T("ant-script");
 		return strTag;
 	default:
 		assert(0);

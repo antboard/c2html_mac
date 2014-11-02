@@ -20,6 +20,11 @@
 		7DF18BEA19F52BC700B266DD /* nodeManageFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF18BDD19F52BC700B266DD /* nodeManageFile.cpp */; };
 		7DF18BEB19F52BC700B266DD /* word.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF18BDF19F52BC700B266DD /* word.cpp */; };
 		7DF18BF019F60A0300B266DD /* MenuOutputFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF18BEF19F60A0300B266DD /* MenuOutputFile.cpp */; };
+		7DF18BF319F74F2000B266DD /* DocLine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF18BF119F74F2000B266DD /* DocLine.cpp */; };
+		7DF18BF819F904DE00B266DD /* asmFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF18BF419F904DE00B266DD /* asmFile.cpp */; };
+		7DF18BFC19F905BA00B266DD /* AsmLine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF18BFA19F905BA00B266DD /* AsmLine.cpp */; };
+		7DF18C0119F9188B00B266DD /* scriptFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF18BFD19F9188B00B266DD /* scriptFile.cpp */; };
+		7DF18C0219F9188B00B266DD /* ScriptLine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DF18BFF19F9188B00B266DD /* ScriptLine.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -62,6 +67,16 @@
 		7DF18BE019F52BC700B266DD /* Word.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Word.h; sourceTree = "<group>"; };
 		7DF18BED19F6065E00B266DD /* MenuOutputFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuOutputFile.h; sourceTree = "<group>"; };
 		7DF18BEF19F60A0300B266DD /* MenuOutputFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MenuOutputFile.cpp; sourceTree = "<group>"; };
+		7DF18BF119F74F2000B266DD /* DocLine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DocLine.cpp; sourceTree = "<group>"; };
+		7DF18BF219F74F2000B266DD /* DocLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocLine.h; sourceTree = "<group>"; };
+		7DF18BF419F904DE00B266DD /* asmFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = asmFile.cpp; sourceTree = "<group>"; };
+		7DF18BF519F904DE00B266DD /* asmFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = asmFile.h; sourceTree = "<group>"; };
+		7DF18BFA19F905BA00B266DD /* AsmLine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AsmLine.cpp; sourceTree = "<group>"; };
+		7DF18BFB19F905BA00B266DD /* AsmLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsmLine.h; sourceTree = "<group>"; };
+		7DF18BFD19F9188B00B266DD /* scriptFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = scriptFile.cpp; sourceTree = "<group>"; };
+		7DF18BFE19F9188B00B266DD /* scriptFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = scriptFile.h; sourceTree = "<group>"; };
+		7DF18BFF19F9188B00B266DD /* ScriptLine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ScriptLine.cpp; sourceTree = "<group>"; };
+		7DF18C0019F9188B00B266DD /* ScriptLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScriptLine.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +109,16 @@
 		7DF18BC119F52AE500B266DD /* c2html_mac */ = {
 			isa = PBXGroup;
 			children = (
+				7DF18BFD19F9188B00B266DD /* scriptFile.cpp */,
+				7DF18BFE19F9188B00B266DD /* scriptFile.h */,
+				7DF18BFF19F9188B00B266DD /* ScriptLine.cpp */,
+				7DF18C0019F9188B00B266DD /* ScriptLine.h */,
+				7DF18BFA19F905BA00B266DD /* AsmLine.cpp */,
+				7DF18BFB19F905BA00B266DD /* AsmLine.h */,
+				7DF18BF419F904DE00B266DD /* asmFile.cpp */,
+				7DF18BF519F904DE00B266DD /* asmFile.h */,
+				7DF18BF119F74F2000B266DD /* DocLine.cpp */,
+				7DF18BF219F74F2000B266DD /* DocLine.h */,
 				7DF18BEF19F60A0300B266DD /* MenuOutputFile.cpp */,
 				7DF18BED19F6065E00B266DD /* MenuOutputFile.h */,
 				7DF18BC919F52BC700B266DD /* basedata.h */,
@@ -150,7 +175,7 @@
 		7DF18BB719F52AE500B266DD /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0600;
+				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = antboard;
 				TargetAttributes = {
 					7DF18BBE19F52AE500B266DD = {
@@ -182,10 +207,15 @@
 			files = (
 				7DF18BE819F52BC700B266DD /* nodeManage.cpp in Sources */,
 				7DF18BE219F52BC700B266DD /* docFile.cpp in Sources */,
+				7DF18C0119F9188B00B266DD /* scriptFile.cpp in Sources */,
 				7DF18BEA19F52BC700B266DD /* nodeManageFile.cpp in Sources */,
+				7DF18BF819F904DE00B266DD /* asmFile.cpp in Sources */,
 				7DF18BE919F52BC700B266DD /* nodeManageDir.cpp in Sources */,
+				7DF18BFC19F905BA00B266DD /* AsmLine.cpp in Sources */,
+				7DF18BF319F74F2000B266DD /* DocLine.cpp in Sources */,
 				7DF18BE719F52BC700B266DD /* Line.cpp in Sources */,
 				7DF18BEB19F52BC700B266DD /* word.cpp in Sources */,
+				7DF18C0219F9188B00B266DD /* ScriptLine.cpp in Sources */,
 				7DF18BF019F60A0300B266DD /* MenuOutputFile.cpp in Sources */,
 				7DF18BE319F52BC700B266DD /* FuncRef.cpp in Sources */,
 				7DF18BE519F52BC700B266DD /* htmlfile.cpp in Sources */,
@@ -276,7 +306,6 @@
 		7DF18BC719F52AE500B266DD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -286,7 +315,6 @@
 		7DF18BC819F52AE500B266DD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -302,7 +330,7 @@
 				7DF18BC519F52AE500B266DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		7DF18BC619F52AE500B266DD /* Build configuration list for PBXNativeTarget "c2html_mac" */ = {
 			isa = XCConfigurationList;
@@ -311,7 +339,7 @@
 				7DF18BC819F52AE500B266DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};

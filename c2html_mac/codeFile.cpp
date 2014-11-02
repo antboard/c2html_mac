@@ -49,7 +49,7 @@ CCodeFile::~CCodeFile()
 
 void CCodeFile::clearLine()
 {
-		vector<CLine*>::iterator itLine = m_vLines.begin();
+	vector<CLine*>::iterator itLine = m_vLines.begin();
 	while (itLine != m_vLines.end())
 	{
 		CLine* pLine = *itLine;
@@ -552,8 +552,7 @@ void CCodeFile::OutputHtml()
 	bool b_del = false;
 	string tmp;
 	string strPath(OUTPUT_PATH);
-	strPath += m_strPath;
-	strPath += '/';
+	strPath += m_strPath.substr(strlen(CODE_PATH));
 	strPath += GetName();
 	string strPathFuncList = strPath + "_fn.js";
 	string strPathCallList = strPath + _T("_cl.js");

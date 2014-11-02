@@ -5,12 +5,16 @@
 #include "string.h"
 
 #include "codeFile.h"
+#include "docFile.h"
+#include "asmFile.h"
+#include "scriptFile.h"
 
 // 全局文件声明
 std::vector<CNodeManageFile*> CNodeManage::m_vCoverFiles;
 int CNodeManage::m_nSumCHFile = 0;
 int CNodeManage::m_nDocFile = 0;
-
+int CNodeManage::m_nAsmFile = 0;
+int CNodeManage::m_nScriptFile = 0;
 
 CNodeManage::CNodeManage()
 {
@@ -70,12 +74,54 @@ bool CNodeManage::AddFile(const char* pPath, char* name, int tabs)
 		fprintf(stderr,"%*s%s\n", tabs, "", name);
 	#endif
 
+	// 程序文件
 	CNodeManageFile* pFile(NULL);
 	if (strstr(name, ".c") ||
 		strstr(name, ".h"))
 	{
 		pFile = new CCodeFile(pPath, name);
 		m_nSumCHFile++;
+	}
+	
+	// 文档文件
+	if (strstr(pPath, "Documentation") ||
+		strstr(pPath, "configs") ||
+		strstr(pPath, "dts") ||
+		strstr(name, "dts") ||
+		strstr(name, "defconfig") ||
+		strstr(name, ".lds") ||
+		strstr(name, ".txt") ||
+		strstr(name, ".scr") ||
+		strstr(name, ".ld") ||
+		strstr(name, "TODO") ||
+		strstr(name, "README"))
+	{
+		pFile = new CDocFile(pPath, name);
+		m_nDocFile++;
+	}
+
+	// 汇编文件
+	if (strstr(name, ".S") ||
+		strstr(name, ".inc"))
+	{
+		pFile = new CAsmFile(pPath, name);
+		m_nAsmFile++;
+	}
+
+	// 脚本文件
+	if (strstr(name, "Makefile") ||
+		strstr(name, "Kconfig") ||
+		strstr(name, "Kbuild") ||
+		strstr(name, ".sh") ||
+		strstr(name, "Platform") ||
+		strstr(name, ".tbl") ||
+		strstr(name, "record") ||
+		strstr(name, "report") ||
+		strstr(name, ".conf") ||
+		strstr(name, ".pl"))
+	{
+		pFile = new CScriptFile(pPath, name);
+		m_nScriptFile++;
 	}
 	
 	if (pFile)
@@ -163,6 +209,17 @@ void CNodeManage::OutputHtml(string strFile, string& rPath)
 		itFile++;
 	}
 	delete pHtmlFile;
+    // 输出交叉索引文件
+    itFile = m_vpFiles.begin();
+    while(itFile != m_vpFiles.end())
+    {
+    	CNodeManageFile* pFile = *itFile;
+    	if (pFile)
+    	{
+    		pFile->OutputHtml();
+    	}
+    	itFile++;
+    }
     
     itDir = m_vpDirs.begin();
 	while(itDir != m_vpDirs.end())

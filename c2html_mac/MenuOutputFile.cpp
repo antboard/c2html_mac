@@ -21,7 +21,9 @@ CMenuOutputFile::CMenuOutputFile(string& strSave)
 	m_strSource += _T("<meta charset=\"utf-8\">");
 	m_strSource += _T("<meta name=\"keywords\" content=\"linux, &#x6E90;&#x4EE3;&#x7801;, antriver, &#x7740;&#x8272;, &#x5728;&#x7EBF;&#x9605;&#x8BFB;\" />");
 	m_strSource += _T("<script src=\"/javascripts/jquery-2.1.1.min.js\"></script>");
-	m_strSource += _T("<script src=\"/linux/src/srchead.min.js\" type=\"text/javascript\" charset=\"utf-8\"></script>");
+    m_strSource += _T("<script src=\"");
+    m_strSource += JS_PATH;
+    m_strSource += ("srchead.min.js\" type=\"text/javascript\" charset=\"utf-8\"></script>");
 	m_strSource += _T("</head>");
 	m_strSource += _T("<body>");
 
@@ -31,13 +33,15 @@ CMenuOutputFile::CMenuOutputFile(string& strSave)
 	int x = (int)m_strSaveFile.rfind("/");
 	if ((x == -1) || x <= static_len)
 	{
-		m_strSource += "<a href=\"/linux/src/linux-web.html\"><span class=\"ant-dir\">linux src</span></a><br/>";
+        m_strSource += "<a href=\"";
+        m_strSource += JS_PATH;
+        m_strSource += "linux-web.html\"><span class=\"ant-dir\">linux src</span></a><br/>";
 		return;
 	}
 	x -= static_len;
 	string strPrt = m_strSaveFile.substr(static_len,x);
 	m_strSource += "<a href=\"";
-	m_strSource += "/linux/src/";
+    m_strSource += WEB_PATH;
 	m_strSource += strPrt.c_str();
 	m_strSource += ".html";
 	m_strSource += "\">";
@@ -56,7 +60,9 @@ CMenuOutputFile::CMenuOutputFile(string& strSave)
 CMenuOutputFile::~CMenuOutputFile(void)
 {
 	m_strSource += "</div>";
-	m_strSource += _T("<script src=\"/linux/src/srcfoot.min.js\" type=\"text/javascript\" charset=\"utf-8\"></script>");	
+    m_strSource += _T("<script src=\"");
+    m_strSource += JS_PATH;
+    m_strSource += ("srcfoot.min.js\" type=\"text/javascript\" charset=\"utf-8\"></script>");
 
 	m_strSource += _T("</body>");
 	m_strSource += _T("</html>");
@@ -86,7 +92,7 @@ void CMenuOutputFile::AddMenu(const string& strtag, string& strLink, char* cls)
 		return;
 	}
 	m_strSource += "<a href=\"";
-	m_strSource += "/linux/src/";
+	m_strSource += WEB_PATH;
 	m_strSource += strLink.c_str();
 	m_strSource += "\">";
 	m_strSource += "<span class=\"ant-dir\">";

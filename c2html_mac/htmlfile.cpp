@@ -1,5 +1,5 @@
 ﻿#include "htmlfile.h"
-#define _T
+#include "basedata.h"
 
 #include <unistd.h>
 #include <sys/stat.h>
@@ -18,7 +18,9 @@ CHtmlFile::CHtmlFile(string& strfile, string& strCFile)
 	m_strSourceT += _T("<meta charset=\"utf-8\">");
 	m_strSourceT += _T("<meta name=\"keywords\" content=\"linux, &#x6E90;&#x4EE3;&#x7801;, antriver, &#x7740;&#x8272;, &#x5728;&#x7EBF;&#x9605;&#x8BFB;\" />");
 	m_strSourceT += _T("<script src=\"/javascripts/jquery-2.1.1.min.js\"></script>");
-	m_strSourceT += _T("<script src=\"/linux/src/srchead.min.js\" type=\"text/javascript\" charset=\"utf-8\"></script>");
+    m_strSourceT += _T("<script src=\"");
+    m_strSourceT += JS_PATH;
+    m_strSourceT += ("srchead.min.js\" type=\"text/javascript\" charset=\"utf-8\"></script>");
 	m_strSourceT += _T("</head>");
 	m_strSourceT += _T("<body>");
 
@@ -26,8 +28,10 @@ CHtmlFile::CHtmlFile(string& strfile, string& strCFile)
 }
 CHtmlFile::~CHtmlFile()
 {
-	m_strSourceE += "</div>";
-	m_strSourceE += _T("<script src=\"/linux/src/srcfoot.min.js\" type=\"text/javascript\" charset=\"utf-8\"></script>");	
+	m_strSourceE += "<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/></div>";
+    m_strSourceE += _T("<script src=\"");
+    m_strSourceE += JS_PATH;
+    m_strSourceE += ("srcfoot.min.js\" type=\"text/javascript\" charset=\"utf-8\"></script>");
 
 	m_strSourceE += _T("</body>");
 	m_strSourceE += _T("</html>");
@@ -42,7 +46,9 @@ CHtmlFile::~CHtmlFile()
 // 		strtag += _T("\">click here open this huge file</a>");
 
 		strtag += _T("<a href=\"#\" class=\"cm-string\" onClick=\"wantJmp()\">&#x5982;&#x679C;wifi&#x73AF;&#x5883;&#x8BF7;&#x70B9;&#x51FB;&#x6211;,&#x6253;&#x5F00;~~~</a>");
-		strtag += _T("</script><script src=\"/linux/src/hugefile.min.js\" type=\"text/javascript\" charset=\"utf-8\"></script>");
+        strtag += _T("</script><script src=\"");
+        strtag += JS_PATH;
+        strtag += ("hugefile.min.js\" type=\"text/javascript\" charset=\"utf-8\"></script>");
 		int nFile = open(tmpfile.c_str(), O_WRONLY|O_CREAT|O_TRUNC, 0777);
 		if (nFile != -1)
 		{
