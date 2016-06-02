@@ -36,7 +36,7 @@ CMenuOutputFile::CMenuOutputFile(string& strSave)
         m_strSource += "<a href=\"";
         m_strSource += JS_PATH;
         m_strSource += INDEX_NAME;
-        m_strSource += ".html\"><span class=\"ant-dir\">linux src</span></a><br/>";
+        m_strSource += ".html\"><span class=\"ant-dir\">src code</span></a><br/>";
 		return;
 	}
 	x -= static_len;
@@ -68,7 +68,7 @@ CMenuOutputFile::~CMenuOutputFile(void)
 	m_strSource += _T("</body>");
 	m_strSource += _T("</html>");
 
-#if DEBUG
+#if DEBUG_FILEMAX
 	static int test = 0;
 	if (++test > 10)
 	{

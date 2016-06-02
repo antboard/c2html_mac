@@ -7,50 +7,50 @@
 
 // keyword
 /*
-1 Êý¾ÝÀàÐÍ¹Ø¼ü×Ö£¨12¸ö£©£º
-(1) char £ºÉùÃ÷×Ö·ûÐÍ±äÁ¿»òº¯Êý 
-(2) double £ºÉùÃ÷Ë«¾«¶È±äÁ¿»òº¯Êý 
-(3) enum £ºÉùÃ÷Ã¶¾ÙÀàÐÍ 
-(4) float£ºÉùÃ÷¸¡µãÐÍ±äÁ¿»òº¯Êý 
-(5) int£º ÉùÃ÷ÕûÐÍ±äÁ¿»òº¯Êý 
-(6) long £ºÉùÃ÷³¤ÕûÐÍ±äÁ¿»òº¯Êý 
-(7) short £ºÉùÃ÷¶ÌÕûÐÍ±äÁ¿»òº¯Êý 
-(8) signed£ºÉùÃ÷ÓÐ·ûºÅÀàÐÍ±äÁ¿»òº¯Êý 
-(9) struct£ºÉùÃ÷½á¹¹Ìå±äÁ¿»òº¯Êý 
-(10) union£ºÉùÃ÷¹²ÓÃÌå£¨ÁªºÏ£©Êý¾ÝÀàÐÍ 
-(11) unsigned£ºÉùÃ÷ÎÞ·ûºÅÀàÐÍ±äÁ¿»òº¯Êý 
-(12) void £ºÉùÃ÷º¯ÊýÎÞ·µ»ØÖµ»òÎÞ²ÎÊý£¬ÉùÃ÷ÎÞÀàÐÍÖ¸Õë£¨»ù±¾ÉÏ¾ÍÕâÈý¸ö×÷ÓÃ£©
-(13) size_t ÔÚstring.hÀïÊ¹ÓÃ¹ý
+1 æ•°æ®ç±»åž‹å…³é”®å­—ï¼ˆ12ä¸ªï¼‰ï¼š
+(1) char ï¼šå£°æ˜Žå­—ç¬¦åž‹å˜é‡æˆ–å‡½æ•° 
+(2) double ï¼šå£°æ˜ŽåŒç²¾åº¦å˜é‡æˆ–å‡½æ•° 
+(3) enum ï¼šå£°æ˜Žæžšä¸¾ç±»åž‹ 
+(4) floatï¼šå£°æ˜Žæµ®ç‚¹åž‹å˜é‡æˆ–å‡½æ•° 
+(5) intï¼š å£°æ˜Žæ•´åž‹å˜é‡æˆ–å‡½æ•° 
+(6) long ï¼šå£°æ˜Žé•¿æ•´åž‹å˜é‡æˆ–å‡½æ•° 
+(7) short ï¼šå£°æ˜ŽçŸ­æ•´åž‹å˜é‡æˆ–å‡½æ•° 
+(8) signedï¼šå£°æ˜Žæœ‰ç¬¦å·ç±»åž‹å˜é‡æˆ–å‡½æ•° 
+(9) structï¼šå£°æ˜Žç»“æž„ä½“å˜é‡æˆ–å‡½æ•° 
+(10) unionï¼šå£°æ˜Žå…±ç”¨ä½“ï¼ˆè”åˆï¼‰æ•°æ®ç±»åž‹ 
+(11) unsignedï¼šå£°æ˜Žæ— ç¬¦å·ç±»åž‹å˜é‡æˆ–å‡½æ•° 
+(12) void ï¼šå£°æ˜Žå‡½æ•°æ— è¿”å›žå€¼æˆ–æ— å‚æ•°ï¼Œå£°æ˜Žæ— ç±»åž‹æŒ‡é’ˆï¼ˆåŸºæœ¬ä¸Šå°±è¿™ä¸‰ä¸ªä½œç”¨ï¼‰
+(13) size_t åœ¨string.hé‡Œä½¿ç”¨è¿‡
 
-2¿ØÖÆÓï¾ä¹Ø¼ü×Ö£¨12¸ö£©£º
-AÑ­»·Óï¾ä 
-(1) for£ºÒ»ÖÖÑ­»·Óï¾ä(¿ÉÒâ»á²»¿ÉÑÔ´«£© 
-(2) do £ºÑ­»·Óï¾äµÄÑ­»·Ìå 
-(3) while £ºÑ­»·Óï¾äµÄÑ­»·Ìõ¼þ 
-(4) break£ºÌø³öµ±Ç°Ñ­»· 
-(5) continue£º½áÊøµ±Ç°Ñ­»·£¬¿ªÊ¼ÏÂÒ»ÂÖÑ­»· 
-BÌõ¼þÓï¾ä 
-(1)if: Ìõ¼þÓï¾ä 
-(2)else £ºÌõ¼þÓï¾ä·ñ¶¨·ÖÖ§£¨Óë if Á¬ÓÃ£© 
-(3)goto£ºÎÞÌõ¼þÌø×ªÓï¾ä 
-C¿ª¹ØÓï¾ä 
-(1)switch :ÓÃÓÚ¿ª¹ØÓï¾ä 
-(2)case£º¿ª¹ØÓï¾ä·ÖÖ§ 
-(3)default£º¿ª¹ØÓï¾äÖÐµÄ¡°ÆäËû¡±·ÖÖ§ 
-D·µ»ØÓï¾ä
-return £º×Ó³ÌÐò·µ»ØÓï¾ä£¨¿ÉÒÔ´ø²ÎÊý£¬Ò²¿´²»´ø²ÎÊý£©
+2æŽ§åˆ¶è¯­å¥å…³é”®å­—ï¼ˆ12ä¸ªï¼‰ï¼š
+Aå¾ªçŽ¯è¯­å¥ 
+(1) forï¼šä¸€ç§å¾ªçŽ¯è¯­å¥(å¯æ„ä¼šä¸å¯è¨€ä¼ ï¼‰ 
+(2) do ï¼šå¾ªçŽ¯è¯­å¥çš„å¾ªçŽ¯ä½“ 
+(3) while ï¼šå¾ªçŽ¯è¯­å¥çš„å¾ªçŽ¯æ¡ä»¶ 
+(4) breakï¼šè·³å‡ºå½“å‰å¾ªçŽ¯ 
+(5) continueï¼šç»“æŸå½“å‰å¾ªçŽ¯ï¼Œå¼€å§‹ä¸‹ä¸€è½®å¾ªçŽ¯ 
+Bæ¡ä»¶è¯­å¥ 
+(1)if: æ¡ä»¶è¯­å¥ 
+(2)else ï¼šæ¡ä»¶è¯­å¥å¦å®šåˆ†æ”¯ï¼ˆä¸Ž if è¿žç”¨ï¼‰ 
+(3)gotoï¼šæ— æ¡ä»¶è·³è½¬è¯­å¥ 
+Cå¼€å…³è¯­å¥ 
+(1)switch :ç”¨äºŽå¼€å…³è¯­å¥ 
+(2)caseï¼šå¼€å…³è¯­å¥åˆ†æ”¯ 
+(3)defaultï¼šå¼€å…³è¯­å¥ä¸­çš„â€œå…¶ä»–â€åˆ†æ”¯ 
+Dè¿”å›žè¯­å¥
+return ï¼šå­ç¨‹åºè¿”å›žè¯­å¥ï¼ˆå¯ä»¥å¸¦å‚æ•°ï¼Œä¹Ÿçœ‹ä¸å¸¦å‚æ•°ï¼‰
 
-3 ´æ´¢ÀàÐÍ¹Ø¼ü×Ö£¨4¸ö£©
-(1)auto £ºÉùÃ÷×Ô¶¯±äÁ¿ Ò»°ã²»Ê¹ÓÃ 
-(2)extern£ºÉùÃ÷±äÁ¿ÊÇÔÚÆäËûÎÄ¼þÕýÉùÃ÷£¨Ò²¿ÉÒÔ¿´×öÊÇÒýÓÃ±äÁ¿£© 
-(3)register£ºÉùÃ÷»ý´æÆ÷±äÁ¿ 
-(4)static £ºÉùÃ÷¾²Ì¬±äÁ¿
+3 å­˜å‚¨ç±»åž‹å…³é”®å­—ï¼ˆ4ä¸ªï¼‰
+(1)auto ï¼šå£°æ˜Žè‡ªåŠ¨å˜é‡ ä¸€èˆ¬ä¸ä½¿ç”¨ 
+(2)externï¼šå£°æ˜Žå˜é‡æ˜¯åœ¨å…¶ä»–æ–‡ä»¶æ­£å£°æ˜Žï¼ˆä¹Ÿå¯ä»¥çœ‹åšæ˜¯å¼•ç”¨å˜é‡ï¼‰ 
+(3)registerï¼šå£°æ˜Žç§¯å­˜å™¨å˜é‡ 
+(4)static ï¼šå£°æ˜Žé™æ€å˜é‡
 
-4 ÆäËü¹Ø¼ü×Ö£¨4¸ö£©£º
-(1)const £ºÉùÃ÷Ö»¶Á±äÁ¿ 
-(2)sizeof£º¼ÆËãÊý¾ÝÀàÐÍ³¤¶È 
-(3)typedef£ºÓÃÒÔ¸øÊý¾ÝÀàÐÍÈ¡±ðÃû£¨µ±È»»¹ÓÐÆäËû×÷ÓÃ 
-(4)volatile£ºËµÃ÷±äÁ¿ÔÚ³ÌÐòÖ´ÐÐÖÐ¿É±»Òþº¬µØ¸Ä±ä
+4 å…¶å®ƒå…³é”®å­—ï¼ˆ4ä¸ªï¼‰ï¼š
+(1)const ï¼šå£°æ˜Žåªè¯»å˜é‡ 
+(2)sizeofï¼šè®¡ç®—æ•°æ®ç±»åž‹é•¿åº¦ 
+(3)typedefï¼šç”¨ä»¥ç»™æ•°æ®ç±»åž‹å–åˆ«åï¼ˆå½“ç„¶è¿˜æœ‰å…¶ä»–ä½œç”¨ 
+(4)volatileï¼šè¯´æ˜Žå˜é‡åœ¨ç¨‹åºæ‰§è¡Œä¸­å¯è¢«éšå«åœ°æ”¹å˜
 */
 CKeyword::CKeyword()
 {
@@ -92,7 +92,7 @@ CKeyword::CKeyword()
 	m_mapKeyWord.insert(map<string, int>::value_type("ifndef", 18));
 	m_mapKeyWord.insert(map<string, int>::value_type("endif", 18));
 	m_mapKeyWord.insert(map<string, int>::value_type("undef", 18));
-	//m_mapKeyWord.insert(map<string, int>::value_type("error", 18));//errorÔÝÇÒ²»ÄÜÊÇ¹Ø¼ü×Ö.ÐèÒªÔÚ³ÌÐòÀï¶Ô#error¹ýÂË
+	//m_mapKeyWord.insert(map<string, int>::value_type("error", 18));//erroræš‚ä¸”ä¸èƒ½æ˜¯å…³é”®å­—.éœ€è¦åœ¨ç¨‹åºé‡Œå¯¹#errorè¿‡æ»¤
 	m_mapKeyWord.insert(map<string, int>::value_type("elif", 18));
 	m_mapKeyWord.insert(map<string, int>::value_type("else", 19));
 	m_mapKeyWord.insert(map<string, int>::value_type("goto", 20));

@@ -148,14 +148,14 @@ bool CNodeManage::AddFileFilter(const char* name)
 
 bool CNodeManage::AddFile2Cover(CNodeManageFile* pFile)
 {
-	#if DEBUG
+#if DEBUG_FILEMAX
 	static int test = 0;
 	if (++test > 10)
 	{
 		return true;
 	}
 	fprintf(stderr,"DEBUG: AddFile2Cover %d to list\n", test);
-	#endif
+#endif
 	m_vCoverFiles.push_back(pFile);
 	return true;
 }

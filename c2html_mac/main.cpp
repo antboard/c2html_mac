@@ -17,7 +17,7 @@ pthread_mutex_t vec_mutex;
 void n2str(int n, string& str)
 {
     char tmp[65];
-    sprintf(tmp, "%x", n);
+    sprintf(tmp, "%d", n);
     str = tmp;
 }
 
@@ -44,14 +44,13 @@ int main(int argc,char* argv[])
 	char* topdir = curdir;
 	if(argc >= 2)
 		topdir = argv[1];    
-	fprintf(stderr,"Directory scan of %s:/n", topdir);  
+	fprintf(stderr,"Directory scan of %s:\n", topdir);  
 	//printdir(topdir, 0);   
 	CNodeManageDir dir(topdir, 0);
 	fprintf(stderr,"all c/h file number is %d\n", CNodeManage::GetCHFileNum());
 	// 创建新路径
 	dir.CreateNewPath();
-	// 输出html路径
-    dir.OutputHtml();
+
 	if (pthread_mutex_init(&vec_mutex, NULL))
 	{
 		fprintf(stderr,"ERROR: init mutex error\n");
@@ -77,6 +76,9 @@ int main(int argc,char* argv[])
 		}
 	}
 
+    // 输出html路径
+    dir.OutputHtml();
+    
 	pthread_mutex_destroy(&vec_mutex);
 	exit(0);
 }

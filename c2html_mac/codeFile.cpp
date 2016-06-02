@@ -528,9 +528,11 @@ void CCodeFile::ToLine(char* pbuf, unsigned long len)
 void CCodeFile::PushFunc(CFuncRef* p)
 {
 	// 添加当前文件路径
-	string netPath = "/linux/src";
-	netPath +=	m_strPath.c_str();
-	string str = netPath + '/' + GetName() + _T(".html");
+	string netPath = JS_PATH;
+	netPath += INDEX_NAME;
+    netPath += "/";
+	netPath +=	m_strPath.substr(strlen(CODE_PATH));
+	string str = netPath + GetName() + _T(".html");
 	p->SetLink(str);
 	p->SetFileName(GetName());
 	m_vFuncs.push_back(p);

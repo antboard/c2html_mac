@@ -5,7 +5,7 @@ strstr(name, ".gitignore") 找到返回指针。找不到返回null
 
 // 2. 限量执行 
 
-#if DEBUG
+#if DEBUG_FILEMAX
 	static int test = 0;
 	if (++test > 10)
 	{

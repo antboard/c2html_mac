@@ -10,10 +10,55 @@ using namespace std;
 #define TRUE 0
 #define _T
 
-#define CODE_PATH "/Users/jiangyichun/Downloads/code/linux-stable/"
-#define OUTPUT_PATH "/Users/jiangyichun/Downloads/code/linux-weboutput/"
-#define JS_PATH "/linux/src/"
-#define INDEX_NAME "linux-3.14.22"
+//#define DEBUG_FILEMAX
+
+
+// #define STM32_CODE_MIDDLEWARES
+// #define STM32_CODE_F0
+// #define STM32_CODE_F2
+// #define STM32_CODE_F3
+// #define STM32_CODE_F4
+#define STM32_CODE_STDLIB
+
+#ifdef LINUX_CODE
+	#define CODE_PATH "/Users/jiangyichun/Downloads/code/linux-stable/"
+	#define OUTPUT_PATH "/Users/jiangyichun/Downloads/code/linux-weboutput/"
+	#define JS_PATH "/linux/src/"
+	#define INDEX_NAME "linux-3.14.22"
+#elif defined(STM32_CODE_MIDDLEWARES)
+	#define CODE_PATH "/Users/jiangyichun/Downloads/code/stm32-code/Middlewares/"
+	#define OUTPUT_PATH "/Users/jiangyichun/Downloads/code/stm32-webcode/"
+	#define JS_PATH "/stm32/"
+	#define INDEX_NAME "Middlewares"
+#elif defined(STM32_CODE_F0)
+	#define CODE_PATH "/Users/jiangyichun/Downloads/code/stm32-code/STM32Cube_FW_F0_V1.0.0/"
+	#define OUTPUT_PATH "/Users/jiangyichun/Downloads/code/stm32-webcode/"
+	#define JS_PATH "/stm32/"
+	#define INDEX_NAME "STM32Cube_FW_F0_V1.0.0"
+
+#elif defined(STM32_CODE_F2)
+	#define CODE_PATH "/Users/jiangyichun/Downloads/code/stm32-code/STM32Cube_FW_F2_V1.1.0/"
+	#define OUTPUT_PATH "/Users/jiangyichun/Downloads/code/stm32-webcode/"
+	#define JS_PATH "/stm32/"
+	#define INDEX_NAME "STM32Cube_FW_F2_V1.1.0"
+#elif defined(STM32_CODE_F3)
+	#define CODE_PATH "/Users/jiangyichun/Downloads/code/stm32-code/STM32Cube_FW_F3_V1.0.0/"
+	#define OUTPUT_PATH "/Users/jiangyichun/Downloads/code/stm32-webcode/"
+	#define JS_PATH "/stm32/"
+	#define INDEX_NAME "STM32Cube_FW_F3_V1.0.0"
+#elif defined(STM32_CODE_F4)
+	#define CODE_PATH "/Users/jiangyichun/Downloads/code/stm32-code/STM32Cube_FW_F4_V1.1.0/"
+	#define OUTPUT_PATH "/Users/jiangyichun/Downloads/code/stm32-webcode/"
+	#define JS_PATH "/stm32/"
+	#define INDEX_NAME "STM32Cube_FW_F4_V1.1.0"
+#elif defined(STM32_CODE_STDLIB)
+	#define CODE_PATH "/Users/jiangyichun/Downloads/code/stm32-code/STM32F10x_StdPeriph_Lib_V3.5.0/"
+	#define OUTPUT_PATH "/Users/jiangyichun/Downloads/code/stm32-webcode/"
+	#define JS_PATH "/stm32/"
+	#define INDEX_NAME "STM32F10x_StdPeriph_Lib_V3.5.0"
+#else
+	#error "undefine linux or stm32"
+#endif
 // 枚举到的目录提示
 // #define ENABLE_PATH_TIPS 
 
